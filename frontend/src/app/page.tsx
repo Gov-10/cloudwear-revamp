@@ -19,7 +19,7 @@ export default function Home() {
     setShowResult(false);
 
     try {
-      const res = await fetch('http://localhost:8000/res', {
+      const res = await fetch('/res', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ city }),

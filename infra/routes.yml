@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: HTTPRoute
+metadata:
+  name: cloudwear-route
+spec:
+  parentRefs:
+    - name: cloudwear-gateway
+  rules:
+  - matches:
+      - path:
+          type: PathPrefix
+          value: /
+    backendRefs:
+    - name: frontend-service
+      port: 80
+
+  - matches:
+      - path:
+          type: PathPrefix
+          value: /res
+    backendRefs:
+    - name: backend-service
+      port: 8000

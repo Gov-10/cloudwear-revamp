@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/gov10/cloudwear-front:1.0
+        image: docker.io/gov10/cloudwear-front:2.0
         ports:
           - containerPort: 3000
   
