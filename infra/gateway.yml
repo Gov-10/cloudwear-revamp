@@ -3,7 +3,7 @@ kind: Gateway
 metadata:
   name: cloudwear-gateway
 spec:
-  gatewayClassName: kong
+  gatewayClassName: envoy
   listeners:
     - name: http
       protocol: http

@@ -14,17 +14,19 @@ export default function Home() {
   const [showResult, setShowResult] = useState(false);
 
   async function fetchAdvice() {
+	  console.log("Fetch function called");
     if (!city.trim()) return alert('Enter a city name');
     setLoading(true);
     setShowResult(false);
 
     try {
+	    console.log("before FETCH ");
       const res = await fetch('/res', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ city }),
       });
-
+	console.log(`result status after fetch: ${res.status}`);
       if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
       const json: AdviceResponse = await res.json();
